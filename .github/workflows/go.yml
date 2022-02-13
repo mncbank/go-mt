@@ -19,7 +19,4 @@ jobs:
         go-version: 1.17
 
     - name: Build
-      timeout-minutes: 1
       run: go run app.go
-    - name: kill process
-      run: kill %%
