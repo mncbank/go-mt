@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker-compose up -d
+    - name: Sleep for 5s
+      uses: juliangruber/sleep-action@v1
+      with:
+        time: 5s
+    - name: stop docker
+      run: docker stop go-mt
