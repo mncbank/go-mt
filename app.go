@@ -22,7 +22,7 @@ func main() {
 	  }
 	}()
 	
-	for{
+	for i := 1; i < 20; i++{
 	  select {
 	    case msg1 := <- c1:
 	      fmt.Println(msg1)
