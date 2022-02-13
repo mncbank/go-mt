@@ -1,0 +1,7 @@
+version: '3.5'
+
+services:
+
+  apps:
+    container_name: go-mt
+    build: .
