@@ -19,11 +19,7 @@ jobs:
         go-version: 1.17
 
     - name: Build
+      timeout-minutes: 0.12
       run: go run app.go
-      
-    - name: Sleep for 5s
-      uses: juliangruber/sleep-action@v1
-      with:
-        time: 5s
     - name: kill process
       run: kill %%
